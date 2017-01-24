@@ -70,7 +70,6 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.slicknav_icon').click(function(){
     $(this).toggleClass('open');
-    $('.intro-section').toggleClass('intro-section-hidden');
   });
 });
 
@@ -215,29 +214,34 @@ function initMap() {
       }
 
 //CLICKEVENT ABOUT US
-var matte = 'Hej jag heter Mattias och jag..';
-var andreas = 'Hej jag heter Andreas och jag..';
-var nico = 'Hej jag heter Nicolas och jag..';
+var m = `<span style="font-size:2rem;">Mattias Östblom</span><br/>
+         <span style="font-style:italic;">Frontend Utvecklare</span><br/><br/>
+         Sedan Spider Link grundades har Mattias varit företagets ledstjärna inom webbutveckling. Mattias skicklighet som programmerare utmärker honom som en exceptionell resurs för Spider Link. Han trivs lika bra att arbeta med frontend- som backend-delen av en lösning.`;
+var a = `<span style="font-size:2rem;">Andreas Engström</span><br/>
+         <span style="font-style:italic;">Frontend Utvecklare</span><br/><br/>
+         Andreas är vår kreativa utvecklare som har pysslat med programmering sen han skaffade sin första modem 1994. Som programmerare är Andreas en kreativ kraft i Spider Link som UI/UX-expert och iOS-utvecklare och kombinerar sina tekniska färdigheter med sitt öga för system och gränssnitt.`;
+var n = `<span style="font-size:2rem; color:#373a3c;">Nicolas Fuentes</span><br/>
+         <span style="font-style:italic; color:#373a3c;">Frontend utvecklare</span><br/><br/>
+         Med en förkärlek för läcker design och frontendutveckling skapar Nicolas hemsidor och webblösningar med fingertoppskänsla. Han är utvecklare med fokus på webb, UX och engagerande digitala upplevelser.`;
 var closeBtn = '<span class="btnClose">Stäng</span>';
 
-$('.service-icon').click(function(){
-  console.log(this.id);
+$('.circle-img').click(function(){
   if (this.id === 'photo1'){
-    $('<div class="overlay-matte img-clicked"><p>' + matte + '</p></div>').appendTo('#overlay');
+    $('<div class="overlay-matte img-clicked"><p>' + m + '</p></div>').appendTo('#overlay');
     $(closeBtn).appendTo('.overlay-matte');
     $('.img-clicked').addClass('slideExpandUp');
     } else if (this.id === 'photo2'){
-      $('<div class="overlay-andreas img-clicked"><p>' + andreas + '</p></div>').appendTo('#overlay');
+      $('<div class="overlay-andreas img-clicked"><p>' + a + '</p></div>').appendTo('#overlay');
       $(closeBtn).appendTo('.overlay-andreas');
       $('.img-clicked').addClass('slideExpandUp');
     } else {
-      $('<div class="overlay-nico img-clicked"><p>' + nico + '</p></div>').appendTo('#overlay');
+      $('<div class="overlay-nico img-clicked"><p style="color:#373a3c;">' + n + '</p></div>').appendTo('#overlay');
       $(closeBtn).appendTo('.overlay-nico');
       $('.img-clicked').addClass('slideExpandUp');
   }
-  $('.service-icon').addClass('pointer-event');
+  $('.circle-img').addClass('pointer-event');
   $('.btnClose').click(function(){
     $(this).parent().remove();
-    $('.service-icon').removeClass('pointer-event');
+    $('.circle-img').removeClass('pointer-event');
   });
 });

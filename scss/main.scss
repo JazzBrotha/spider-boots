@@ -64,6 +64,7 @@ nav.shrink a {
 
 .fixednav {
   background-color: black;
+  opacity: 0.9;
   transition: background-color 0.5s ease-in;
 }
 
@@ -84,11 +85,15 @@ nav.shrink a {
   align-items: center;
 }
 
-.footer-icon{
+.footer-icon {
   text-decoration: none;
   color: white;
-  &:hover{
-    opacity: 0.5;
+  padding: 0.1em;
+  transition: .25s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+    transition: .25s ease-in-out;
+    color: #E48E98;
   }
 }
 
@@ -174,7 +179,7 @@ background-color: #df4859;
 }
 
 p{
-  font-weight: 600;
+  font-weight: 400;
 }
 
 a {text-decoration: none; color: white;}
@@ -226,7 +231,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn, .btn-secondary{
   outline: none;
   border: 2px solid #DC4A5C;
-  border-radius: 25px;
   background-color: white;
   width: 60%;
   padding: 10px;
@@ -246,17 +250,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.about-border-box:nth-child(3n+2) .service-icon:hover {
+.about-border-box:nth-child(3n+2) .circle-img:hover {
  border: 5px solid #DF4859;
 }
-.about-border-box:nth-child(3n+3) .service-icon:hover{
+.about-border-box:nth-child(3n+3) .circle-img:hover{
   border: 5px solid #E48E98;
 }
-.about-border-box:nth-child(3n+1) .service-icon:hover {
+.about-border-box:nth-child(3n+1) .circle-img:hover {
   border: 5px solid #EFF0D1;
 }
 
-.service-icon {
+.circle-img {
   height: 200px;
   width: 200px;
   border-radius: 30%;
@@ -325,10 +329,9 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(-135deg);
 }
 
-.intro-section-hidden {
-  display: none;
+.intro-section {
+  z-index: 1;
 }
-
 .intro-brand {
   position: absolute;
   top: 5px;
@@ -366,7 +369,6 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   opacity: 0.8;
 }
-
 
 .brand-logo {
   width: 30%;
@@ -472,16 +474,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .overlay-nico {
   background-color: #EFEFD5;
-  color: #ffffff;
+  color: #000000;
+
 }
 
 .img-clicked {
   position: absolute;
   padding: 2rem;
-  margin-top: 13rem;
+  margin-top: 10rem;
   left: 30%;
   width: 40%;
-  height: 30%;
+  height: 55%;
   opacity: 0.9;
   border-radius: 10px;
   -webkit-box-shadow: 0px -1px 27px -1px rgba(0, 0, 0, 0.75);
@@ -509,4 +512,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .pointer-event {
   pointer-events: none;
+}
+
+.line-small {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+}
+
+.list-heading {
+  font-size: 1.2em;
+}
+
+.service-icon {
+  transition: all .2s ease-in-out;
+}
+
+.box {
+  transition: all .2s ease-in-out;
+  &:hover {
+    .service-icon {
+      color: #DF4859;
+      transform: scale(1.5);
+    }
+  }
 }
