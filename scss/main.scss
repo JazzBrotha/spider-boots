@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slicknav_icon.open span:nth-child(2) {
   opacity: 0;
-  left: -60px;
+  right: 60px;
 }
 
 .slicknav_icon.open span:nth-child(3) {
@@ -329,8 +329,8 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(-135deg);
 }
 
-.intro-section {
-  z-index: 1;
+.intro-section-hidden {
+  display: none;
 }
 .intro-brand {
   position: absolute;
@@ -475,7 +475,6 @@ h1, h2, h3, h4, h5, h6 {
 .overlay-nico {
   background-color: #EFEFD5;
   color: #000000;
-
 }
 
 .img-clicked {
