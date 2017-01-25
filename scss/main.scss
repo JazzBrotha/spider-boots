@@ -22,7 +22,7 @@ body {
   padding-right: 25px !important;
   border-radius: 0;
     .nav-link {
-      color: white;
+    	color: white;
     &:hover {
       color: rgb(223, 72, 89);
       transition: color 0.2s linear;
@@ -39,7 +39,7 @@ nav a {
 
 .nav-item .active {
   color: rgb(223, 72, 89);
-}
+  }
 
 .navbar-toggler {
   &:focus {
@@ -73,8 +73,6 @@ nav.shrink a {
   transition: all 0.5s ease;
 }
 
-
-
 .navbar-brand {
   position: absolute;
 }
@@ -98,15 +96,15 @@ nav.shrink a {
 }
 
 .staff {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  .rounded-circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.rounded-circle {
     box-shadow: 0 0 10px rgba(0, 0, 0, .8);
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .8);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .8);
-  }
+	}
 }
 
 .parallax {
@@ -353,6 +351,7 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0px;
     left: 0px;
+    border:none;
 }
 
 .front {
@@ -461,6 +460,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #4f481c;
 }
 
+
 //CLICKEVENT ABOUT US
 .overlay-matte {
   background-color: #DF4859;
@@ -512,6 +512,7 @@ h1, h2, h3, h4, h5, h6 {
 .pointer-event {
   pointer-events: none;
 }
+
 
 .line-small {
   border: 0;
