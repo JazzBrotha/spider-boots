@@ -23,23 +23,23 @@ body {
   border-radius: 0;
     .nav-link {
     	color: white;
-    &:hover {
-      color: rgb(223, 72, 89);
-      transition: color 0.2s linear;
-    }
   }
 }
 
 nav a {
   font-size: 24px;
   padding: 12px 6px 12px 6px;
-  -webkit-transition: all 0.5s linear;
-   transition: all 0.5s linear;
+  -webkit-transition: all 0.7s ease;
+   transition: all 0.7s ease;
+   &:hover {
+     color: rgb(223, 72, 89);
+     transform: scale(1.1);
+   }
 }
 
 .nav-item .active {
   color: rgb(223, 72, 89);
-  }
+}
 
 .navbar-toggler {
   &:focus {
@@ -72,6 +72,8 @@ nav.shrink a {
   width: 115%;
   transition: all 0.5s ease;
 }
+
+
 
 .navbar-brand {
   position: absolute;
@@ -327,9 +329,19 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(-135deg);
 }
 
+.slicknav_nav a{
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease !important;
+}
+
+.slicknav_nav a:hover {
+  transform: scale(1.1);
+}
+
 .intro-section-hidden {
   display: none;
 }
+
 .intro-brand {
   position: absolute;
   top: 5px;

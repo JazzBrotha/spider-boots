@@ -1,22 +1,17 @@
 // jshint esversion:6
 
 //SMOOTH SCROLL
-$(".navbar a, [href='#myPage']").on('click', function(event) {
-
-
-  event.preventDefault();
-
-
-  var hash = this.hash;
-
-
-  $('html, body').animate({
-    scrollTop: $(hash).offset().top
-  }, 900, function(){
-
-
-    window.location.hash = hash;
-  });
+$('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top-50
+      }, 800);
+      return false;
+    }
+  }
 });
 
 //SCROLL TO TOP
@@ -27,6 +22,7 @@ $(window).scroll(function() {
         $('.scrollToTop').fadeOut();
     }
 });
+
 
 $('.scrollToTop').click(function() {
     $('html, body').animate({
