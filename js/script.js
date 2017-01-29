@@ -16,7 +16,7 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 
 //SCROLL TO TOP
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 400) {
+    if ($(this).scrollTop() > 2000) {
         $('.scrollToTop').fadeIn();
     } else {
         $('.scrollToTop').fadeOut();
