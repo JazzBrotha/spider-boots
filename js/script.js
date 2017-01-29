@@ -218,6 +218,10 @@ const marker = new google.maps.Marker({
       }
 
 //CLICKEVENT ABOUT US
+const desktop = window.matchMedia("(min-width: 1024px)");
+const tablet = window.matchMedia("(min-width: 768px)");
+const mobile = window.matchMedia("(max-width: 600px)");
+
 var m = `<span style="font-size:2rem;">Mattias Östblom</span><br/>
          <span style="font-style:italic;">Frontend Utvecklare</span><br/><br/>
          Sedan Spider Link grundades har Mattias varit företagets ledstjärna inom webbutveckling. Mattias skicklighet som programmerare utmärker honom som en exceptionell resurs för Spider Link. Han trivs lika bra att arbeta med frontend- som backend-delen av en lösning.`;
@@ -229,23 +233,25 @@ var n = `<span style="font-size:2rem; color:#373a3c;">Nicolas Fuentes</span><br/
          Med en förkärlek för läcker design och frontendutveckling skapar Nicolas hemsidor och webblösningar med fingertoppskänsla. Han är utvecklare med fokus på webb, UX och engagerande digitala upplevelser.`;
 var closeBtn = '<span class="btnClose">Stäng</span>';
 
-$('.circle-img').click(function(){
-  if (this.id === 'photo1'){
-    $('<div class="overlay-matte img-clicked"><p>' + m + '</p></div>').appendTo('#overlay');
-    $(closeBtn).appendTo('.overlay-matte');
-    $('.img-clicked').addClass('slideExpandUp');
-    } else if (this.id === 'photo2'){
-      $('<div class="overlay-andreas img-clicked"><p>' + a + '</p></div>').appendTo('#overlay');
-      $(closeBtn).appendTo('.overlay-andreas');
+if (desktop.matches) {
+  $('.circle-img').click(function(){
+    if (this.id === 'photo1'){
+      $('<div class="overlay-matte img-clicked"><p>' + m + '</p></div>').appendTo('#overlay');
+      $(closeBtn).appendTo('.overlay-matte');
       $('.img-clicked').addClass('slideExpandUp');
-    } else {
-      $('<div class="overlay-nico img-clicked"><p style="color:#373a3c;">' + n + '</p></div>').appendTo('#overlay');
-      $(closeBtn).appendTo('.overlay-nico');
-      $('.img-clicked').addClass('slideExpandUp');
-  }
-  $('.circle-img').addClass('pointer-event');
-  $('.btnClose').click(function(){
-    $(this).parent().remove();
-    $('.circle-img').removeClass('pointer-event');
+      } else if (this.id === 'photo2'){
+        $('<div class="overlay-andreas img-clicked"><p>' + a + '</p></div>').appendTo('#overlay');
+        $(closeBtn).appendTo('.overlay-andreas');
+        $('.img-clicked').addClass('slideExpandUp');
+      } else {
+        $('<div class="overlay-nico img-clicked"><p style="color:#373a3c;">' + n + '</p></div>').appendTo('#overlay');
+        $(closeBtn).appendTo('.overlay-nico');
+        $('.img-clicked').addClass('slideExpandUp');
+    }
+    $('.circle-img').addClass('pointer-event');
+    $('.btnClose').click(function(){
+      $(this).parent().remove();
+      $('.circle-img').removeClass('pointer-event');
+    });
   });
-});
+}
