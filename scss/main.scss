@@ -32,8 +32,8 @@ nav a {
   -webkit-transition: all 0.7s ease;
    transition: all 0.7s ease;
    &:hover {
-     color: rgb(223, 72, 89);
-     transform: scale(1.1);
+     color: rgb(223, 72, 89) !important;
+     transform: scale(1.1) !important;
    }
 }
 
@@ -559,4 +559,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .text {
   font-size: 1.1em;
+}
+
+
+.underline:hover {
+  text-decoration: underline;
+  color: inherit;
 }
