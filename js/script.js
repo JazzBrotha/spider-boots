@@ -24,6 +24,15 @@ $(window).scroll(function() {
 });
 
 
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       $('.scrollToTop').css('bottom', '3rem');
+   }
+   else {
+     $('.scrollToTop').css('bottom', '0');
+   }
+});
+
 $('.scrollToTop').click(function() {
     $('html, body').animate({
         scrollTop: 0
